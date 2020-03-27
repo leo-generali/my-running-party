@@ -9,12 +9,14 @@
     "build": "ENV=production eleventy"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^0.10.0",
+    "@11ty/eleventy": "@git@github.com:11ty/eleventy",
     "@fullhuman/postcss-purgecss": "^2.1.0",
     "autoprefixer": "^9.7.5",
     "cssnano": "^4.1.10",
+    "lodash": "^4.17.15",
     "postcss": "^7.0.27",
     "rimraf": "^3.0.2",
+    "slugify": "^1.4.0",
     "tailwindcss": "^1.2.0"
   }
 }

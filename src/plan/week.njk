@@ -1,0 +1,37 @@
+---
+layout: layouts/main.njk
+
+pagination:
+  data: collections.plansPerWeek
+  size: 1
+  alias: plan
+
+permalink: "plan/{{ plan.name | slug }}/week-{{ plan.week }}/index.html"
+---
+{% set currentPlanTraining = collections.plansPerWeek | filter(plan.name) %}
+
+{# Training Plan Week Link #}
+<nav>
+  <ul class='grid grid-cols-8 gap-10'>
+    {% for block in currentPlanTraining %}
+      <li class=''>
+        <a 
+          class='
+            w-full h-6 block text-white text-center
+            {% if plan.week !== block.week %}
+              bg-gray-500
+            {% else %}
+              bg-indigo-400
+            {% endif %}'
+          href="/plan/{{ plan.name | slug }}/week-{{ block.week }}">
+          {{ block.week }}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+</nav>
+
+{% for activity in plan.activities %}
+  {{ activity.time }}
+{% endfor %}
+
