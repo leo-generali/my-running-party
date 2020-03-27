@@ -3,4 +3,6 @@ permalink: index.html
 layout: layouts/main.njk
 ---
 
-<h1>Hello World!</h1>
+{% for plan in plans %}
+  <div>{{ plan.name }}</div>
+{% endfor %}
