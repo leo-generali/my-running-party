@@ -1,0 +1,20 @@
+{
+  "name": "myrunningparty",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "ENV=development eleventy --serve",
+    "dev:prod": "yarn build --serve",
+    "build": "ENV=production eleventy"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^0.10.0",
+    "@fullhuman/postcss-purgecss": "^2.1.0",
+    "autoprefixer": "^9.7.5",
+    "cssnano": "^4.1.10",
+    "postcss": "^7.0.27",
+    "rimraf": "^3.0.2",
+    "tailwindcss": "^1.2.0"
+  }
+}
