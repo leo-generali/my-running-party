@@ -11,6 +11,9 @@ module.exports = config => {
     return arr.filter(week => week.name === name);
   });
 
+  // Passthrough all favicon related imagery to root
+  config.addPassthroughCopy({ "src/_favicon/*": "/" });
+
   return {
     dir: {
       input: "src",
