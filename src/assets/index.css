@@ -1,3 +1,29 @@
 @tailwind base;
 @tailwind components;
+
+:root {
+  /* Nav Variables */
+  --nav-bar-height: -0.5rem;
+}
+
+.nav-links:after {
+  content: "";
+  bottom: var(--nav-bar-height);
+  @apply h-1 w-full absolute left-0 bg-eggplant-400 z-0;
+}
+
+.nav-link:after {
+  content: "";
+  bottom: var(--nav-bar-height);
+  @apply h-1 w-full absolute left-0 z-10;
+}
+
+.nav-link.active:after {
+  @apply bg-lime-500;
+}
+
+.nav-link:not(.active):hover:after {
+  @apply bg-white;
+}
+
 @tailwind utilities;

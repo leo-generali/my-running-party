@@ -6,13 +6,9 @@
   <title>My Running Party</title>
   <style>{{ css | safe }}</style>
 </head>
-<body class='flex flex-col min-h-screen bg-eggplant-700 leading-relaxed'>
-  <nav>
-    <section class='px-4 max-w-screen-md w-full mx-auto'>
-      <a href="/">Home</a>
-    </section>
-  </nav>
-  <main class='flex-grow px-4 max-w-screen-md w-full mx-auto'>
+<body class='flex flex-col min-h-screen bg-eggplant-500 leading-relaxed'>
+  {% include './_navigation.njk' %}
+  <main class='flex-grow px-4 max-w-screen-md w-full mx-auto mt-8'>
     {{ content | safe }}
   </main>
   <footer>
