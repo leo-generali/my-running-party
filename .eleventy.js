@@ -1,6 +1,5 @@
-const _ = require("lodash");
-const plans = require("./src/_data/plans");
 const filters = require("./src/_11ty/filters");
+const shortcodes = require("./src/_11ty/shortcodes");
 
 module.exports = config => {
   // Custom Filters
@@ -10,6 +9,9 @@ module.exports = config => {
   config.addFilter("filter", (arr, name) => {
     return arr.filter(week => week.name === name);
   });
+
+  // Custom Shortcode
+  config.addShortcode("svg", shortcodes.svg);
 
   // Passthrough all favicon related imagery to root
   config.addPassthroughCopy({ "src/_favicon/*": "/" });
