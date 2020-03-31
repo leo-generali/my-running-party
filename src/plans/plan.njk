@@ -1,0 +1,12 @@
+---
+layout: layouts/main.njk
+
+pagination:
+  data: plans
+  size: 1
+  alias: plan
+
+permalink: plans/{{ plan.name | slug }}/index.html
+---
+
+<h1>{{ plan.name }} Running Plan</h1>

@@ -3,11 +3,11 @@ layout: layouts/main.njk
 
 permalink: index.html
 ---
+{% import 'partials/index.njk' as partials %}
 
-{# {% for plan in plans | entries %}
-  {% set name = plan[1].name%}
-  {% set slug = 'plan/' + name | slug %}
-  <div>
-    <a href="{{ slug }}">{{ name }}</a>
-  </div>
-{% endfor %} #}
+<ul class='grid gap-4'>
+  {% for feature in features %}
+    <li>{{ partials.feature(feature) }}</li>
+  {% endfor %}
+  <li>{{ partials.featurePlaceholder() }}</li>
+</ul>

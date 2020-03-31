@@ -1,7 +1,6 @@
 const _ = require("lodash");
-const plans = require("../_data/plans");
 
-const plansPerWeek = () => {
+const createArrayOfPlanWeeks = plans => {
   return _.flatMap(plans, plan => {
     const { activitiesPerWeek, activities } = plan;
     return _.chunk(activities, activitiesPerWeek).map(
@@ -17,4 +16,17 @@ const plansPerWeek = () => {
   });
 };
 
-module.exports = { plansPerWeek };
+module.exports = () => {
+  return {
+    plansPerWeek: data => {
+      console.log({ data });
+    },
+    pagination: {
+      data: "plans",
+      size: 1,
+      before: plans => createArrayOfPlanWeeks(plans),
+      alias: "plan"
+    },
+    permalink: `plans/{{ plan.name | slug }}/week-{{ plan.week }}/index.html`
+  };
+};

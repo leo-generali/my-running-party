@@ -1,6 +1,5 @@
 const _ = require("lodash");
 const plans = require("./src/_data/plans");
-const collections = require("./src/_11ty/collections");
 const filters = require("./src/_11ty/filters");
 
 module.exports = config => {
@@ -11,9 +10,6 @@ module.exports = config => {
   config.addFilter("filter", (arr, name) => {
     return arr.filter(week => week.name === name);
   });
-
-  // Custom Collections
-  config.addCollection("plansPerWeek", collections.plansPerWeek);
 
   return {
     dir: {

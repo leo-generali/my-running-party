@@ -1,0 +1,13 @@
+---
+layout: layouts/main.njk
+
+permalink: plans/index.html
+---
+
+{% for plan in plans %}
+  {% set name = plan.name %}
+  {% set slug = '/plans/' + name | slug %}
+  <div>
+    <a href="{{ slug }}">{{ name }}</a>
+  </div>
+{% endfor %}

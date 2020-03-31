@@ -1,0 +1,46 @@
+{% macro feature(feature) %}  
+  <a 
+    class='
+      group transform
+      bg-clementine-500 transition duration-75
+      shadow p-4 rounded-lg block
+      hover:bg-clementine-400 hover:-translate-y-1 hover:shadow-xl
+      active:translate-y-px active:bg-clementine-600'
+    href='{{ feature.url }}'>
+    <p class='
+      text-clementine-200
+      font-semibold tracking-widest uppercase
+      group-hover:text-clementine-100'
+    >
+      {{ feature.name }}
+    </p>
+    <p class='
+      mt-4
+      text-white'
+    >
+      {{ feature.description }}
+    </p>
+  </a>
+{% endmacro %}
+
+{% macro featurePlaceholder() %}  
+  <div
+    class='
+      transform
+      bg-clementine-600 transition duration-75
+      shadow p-4 rounded-lg block'>
+    <p class='
+      text-clementine-200
+      font-semibold tracking-widest uppercase'
+    >
+      More to come!
+    </p>
+    <p class='
+      mt-4
+      text-white'
+    >
+      Check back often - we're always adding new features.
+    </p>
+  </div>
+{% endmacro %}
+

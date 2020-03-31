@@ -1,14 +1,11 @@
 ---
 layout: layouts/main.njk
 
-pagination:
-  data: collections.plansPerWeek
-  size: 1
-  alias: plan
+# Pagination in 11tydata.js
 
-permalink: "plan/{{ plan.name | slug }}/week-{{ plan.week }}/index.html"
+# Permalink in 11tydata.js
 ---
-{% set currentPlanTraining = collections.plansPerWeek | filter(plan.name) %}
+{% set currentPlanTraining = pagination.pages | filter(plan.name) %}
 
 {# Training Plan Week Link #}
 <nav>
