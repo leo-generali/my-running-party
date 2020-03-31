@@ -5,6 +5,10 @@ permalink: index.html
 ---
 {% import 'macros/index.njk' as partials %}
 
+<section class='my-8'>
+  <h1>My Running Party</h1>
+</section>
+
 <ul class='grid gap-4'>
   {% for feature in features %}
     <li>{{ partials.feature(feature) }}</li>

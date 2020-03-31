@@ -7,8 +7,9 @@
   <style>{{ css | safe }}</style>
 </head>
 <body class='flex flex-col min-h-screen bg-eggplant-500 leading-relaxed'>
-  {% include './_navigation.njk' %}
-  <main class='flex-grow px-4 max-w-screen-md w-full mx-auto mt-8'>
+  {% include './_desktop-navigation.njk' %}
+  {% include './_mobile-navigation.njk' %}
+  <main class='flex-grow px-4 max-w-screen-md w-full mx-auto mt-4 mb-10 lg:mt-8'>
     {{ content | safe }}
   </main>
   <footer>

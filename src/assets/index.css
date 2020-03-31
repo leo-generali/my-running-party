@@ -26,4 +26,15 @@
   @apply bg-white;
 }
 
+.mobile-nav-link:after {
+  content: "";
+  bottom: 0;
+  height: 0.2rem;
+  @apply w-full absolute left-0 bg-eggplant-400 z-0 rounded-full;
+}
+
+.mobile-nav-link.active:after {
+  @apply bg-lime-200;
+}
+
 @tailwind utilities;
