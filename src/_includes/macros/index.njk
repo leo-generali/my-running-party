@@ -1,9 +1,9 @@
 {% macro feature(feature) %}  
   <a 
-    class='
+    class='feature
       group transform relative overflow-hidden
       bg-clementine-500 transition duration-75
-      shadow p-4 rounded-lg block
+      shadow p-4 rounded-lg block text-shadow
       hover:bg-clementine-400 hover:-translate-y-1 hover:shadow-xl
       active:translate-y-px active:bg-clementine-600'
     href='{{ feature.url }}'>
@@ -23,20 +23,13 @@
 {% macro featurePlaceholder() %}  
   <div
     class='
-      transform
-      bg-clementine-600 transition duration-75
-      shadow p-4 rounded-lg block'>
-    <p class='
-      text-clementine-200
-      font-semibold tracking-widest uppercase'
-    >
+      border-dashed border-2 border-clementine-500
+      p-4 rounded-lg block'>
+    <p class='font-semibold tracking-widest uppercase'>
       More to come!
     </p>
-    <p class='
-      mt-4
-      text-white'
-    >
-      Check back often - we're always adding new features.
+    <p class='mt-4'>
+      Check back often - we're always adding new things to help with your training.
     </p>
   </div>
 {% endmacro %}
