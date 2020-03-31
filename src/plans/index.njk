@@ -2,10 +2,14 @@
 layout: layouts/main.njk
 ---
 
+<section class='my-8'>
+  <h1 class='text-white font-bold text-4xl'>Training Plans</h1>
+</section>
+
 {% for plan in plans %}
   {% set name = plan.name %}
   {% set slug = '/plans/' + name | slug %}
-  <div>
+  <section>
     <a href="{{ slug }}">{{ name }}</a>
-  </div>
+  </section>
 {% endfor %}

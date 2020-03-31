@@ -23,15 +23,17 @@
   <meta name="theme-color" content="#ffffff">
   <style>{{ css | safe }}</style>
 </head>
-<body class='flex flex-col min-h-screen bg-eggplant-500 leading-relaxed'>
+<body class='flex flex-col min-h-screen bg-eggplant-500 leading-relaxed text-eggplant-100'>
   {% include './_desktop-navigation.njk' %}
   {% include './_mobile-navigation.njk' %}
   <main class='flex-grow px-4 max-w-screen-md w-full mx-auto mt-4 mb-10 lg:mt-8'>
     {{ content | safe }}
   </main>
-  <footer>
-    <section class='px-4 max-w-screen-md w-full mx-auto'>
-      TK
+  {# Only show the footer on desktop #}
+  <footer class='bg-eggplant-600 hidden lg:block'>
+    <section class='px-4 max-w-screen-md w-full mx-auto my-4 text-xs flex'>
+      <p>Created by <a class='underline hover:text-lime-500' href='https://leogenerali.com' target='_blank'>Leo Generali</a></p>
+      <p class='ml-auto'>©2020</p>
     </section>
   </footer>
 </body>

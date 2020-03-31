@@ -1,6 +1,6 @@
 module.exports = [
   {
-    name: "Training Plans",
+    name: "Running Plans",
     shortName: "Plans",
     url: "/plans/",
     description:
