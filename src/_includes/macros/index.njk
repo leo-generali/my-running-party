@@ -1,7 +1,7 @@
 {% macro feature(feature) %}  
   <a 
     class='
-      group transform
+      group transform relative overflow-hidden
       bg-clementine-500 transition duration-75
       shadow p-4 rounded-lg block
       hover:bg-clementine-400 hover:-translate-y-1 hover:shadow-xl
@@ -14,10 +14,7 @@
     >
       {{ feature.name }}
     </p>
-    <p class='
-      mt-4
-      text-white'
-    >
+    <p class='mt-4 text-white'>
       {{ feature.description }}
     </p>
   </a>
