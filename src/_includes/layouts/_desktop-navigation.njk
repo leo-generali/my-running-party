@@ -13,10 +13,11 @@
       {% for feature in features %}
         <a class='{{ navBasicClasses }}
           nav-link relative
-          {% if not loop.last %}mr-4{% endif %} 
+          {% if not loop.last %}mr-4{% endif %}
           {% if page.url === feature.url %}
-            active
-            {{ navActiveClasses }}
+            active {{ navActiveClasses }}
+          {% elif feature.url in page.url %}
+            active {{ navActiveClasses }}
           {% else %}
             {{ navNotActiveClasses }}
           {% endif %}' href="{{ feature.url }}"

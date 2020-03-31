@@ -350,7 +350,8 @@ module.exports = {
     margin: (theme, { negative }) => ({
       auto: "auto",
       ...theme("spacing"),
-      ...negative(theme("spacing"))
+      ...negative(theme("spacing")),
+      "1/2": "50%"
     }),
     maxHeight: {
       full: "100%",

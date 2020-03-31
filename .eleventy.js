@@ -6,6 +6,7 @@ module.exports = config => {
   config.addFilter("log", filters.log);
   config.addFilter("entries", filters.entries);
   config.addFilter("values", filters.values);
+  config.addFilter("chunk", filters.chunk);
   config.addFilter("filter", (arr, name) => {
     return arr.filter(week => week.name === name);
   });

@@ -8,7 +8,41 @@ pagination:
 
 permalink: plans/{{ plan.name | slug }}/index.html
 ---
+{% set chunkedActivities = plan.activities | chunk(plan.activitiesPerWeek) %}
 
-<section class='my-8'>
-  <h1 class='font-bold text-4xl'>{{ plan.name }} Running Plan</h1>
+<section class='mt-8 mb-12'>
+  <h1 class='font-bold text-4xl lg:text-5xl'>{{ plan.name }} <span class='text-xl text-eggplant-300'>Running Plan</span></h1>
+</section>
+
+<section class='w-screen ml-1/2 transform -translate-x-1/2 bg-eggplant-700 py-12 shadow-inner'>
+  <div class='max-w-screen-md px-4 mx-auto'>
+    {{ plan.description | safe }}
+  </div>
+</section>
+
+<section class='mt-20'>
+  <h2 class='text-3xl font-bold mb-12'>Plan Features</h2>
+  <ul class='grid grid-cols-4 gap-8'>
+    <li>{{ plan.activitiesPerWeek }} runs per week</li>
+    <li>{{ chunkedActivities | length }} to {{ (chunkedActivities | length) + 2 }} weeks</li>
+    <li>Perfect for Beginners</li>
+  </ul>
+</section>
+
+<section class='mt-20'>
+  <h2 class='text-3xl font-bold mb-12'>Weeks at a Glance</h2>
+  <ol>
+    {% for week in chunkedActivities %}
+      <li class='lg:flex'>
+        <div class='w-full lg:w-20 lg:mr-8'>
+          <p>Week {{ loop.index }}:</p>
+        </div>
+        <ol class='w-full grid grid-cols-3 flex-1'>
+          {% for activity in week %}
+            <li>{{ activity.time }}</li>
+          {% endfor %}
+        </ol>
+      </li>
+    {% endfor %}
+  </ol>
 </section>
