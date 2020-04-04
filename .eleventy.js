@@ -1,5 +1,6 @@
 const filters = require("./src/_11ty/filters");
 const shortcodes = require("./src/_11ty/shortcodes");
+const transforms = require("./src/_11ty/transforms");
 
 module.exports = (config) => {
   // Custom Filters
@@ -13,6 +14,11 @@ module.exports = (config) => {
 
   // Custom Shortcode
   config.addShortcode("svg", shortcodes.svg);
+
+  // Minify HTML if on production
+  if (process.env.ENV !== "development") {
+    config.addTransform("minify-html", transforms.minify);
+  }
 
   // Passthrough stuff
   config.addPassthroughCopy({ "src/_favicon/*": "/" });
