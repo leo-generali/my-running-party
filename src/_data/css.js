@@ -3,8 +3,8 @@ const tailwindcss = require("tailwindcss");
 const autoprefixer = require("autoprefixer");
 const cssnano = require("cssnano");
 const purgecss = require("@fullhuman/postcss-purgecss")({
-  content: ["./src/pages/*.njk"],
-  defaultExtractor: content => content.match(/[\w-/:]+(?<!:)/g) || []
+  content: ["./src/*.njk", "./src/**/*.njk"],
+  defaultExtractor: (content) => content.match(/[\w-/:]+(?<!:)/g) || [],
 });
 
 const path = require("path");
@@ -12,7 +12,7 @@ const fs = require("fs");
 
 const postCssConfig = {
   development: [tailwindcss],
-  production: [tailwindcss, autoprefixer, purgecss, cssnano]
+  production: [tailwindcss, autoprefixer, purgecss, cssnano],
 };
 
 module.exports = async () => {
