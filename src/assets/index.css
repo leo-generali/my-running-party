@@ -51,4 +51,18 @@
   @apply bg-lime-200;
 }
 
+.plan-description {
+  & h1, h2, h3, h4, h5, h6 {
+    @apply text-xl mb-6;
+  }
+
+  & p {
+    @apply mb-6;
+  }
+
+  & > *:last-child {
+    @apply mb-0;
+  }
+}
+
 @tailwind utilities;

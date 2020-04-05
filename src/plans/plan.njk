@@ -11,11 +11,11 @@ permalink: plans/{{ plan.name | slug }}/index.html
 {% set chunkedActivities = plan.activities | chunk(plan.activitiesPerWeek) %}
 
 <section class='mt-8 mb-12'>
-  <h1 class='font-bold text-4xl lg:text-5xl'>{{ plan.name }} <span class='text-xl text-eggplant-300'>Running Plan</span></h1>
+  <h1 class='font-bold text-4xl'>{{ plan.name }} <span class='text-xl text-eggplant-300'>Running Plan</span></h1>
 </section>
 
 <section class='w-screen ml-1/2 transform -translate-x-1/2 bg-eggplant-700 py-12 shadow-inner'>
-  <div class='max-w-screen-md px-4 mx-auto'>
+  <div class='plan-description max-w-screen-md px-4 mx-auto'>
     {{ plan.description | safe }}
   </div>
 </section>
