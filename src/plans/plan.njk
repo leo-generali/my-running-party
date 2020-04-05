@@ -9,6 +9,10 @@ pagination:
 permalink: plans/{{ plan.name | slug }}/index.html
 ---
 {% set chunkedActivities = plan.activities | chunk(plan.activitiesPerWeek) %}
+{% set daysOfWeek = ['M', 'T', 'W', 'Th', 'F', 'S', 'Su']%}
+{% set runningDays = 
+  { '3': [true, false, true, false, false, true, false] }
+%}
 
 <section class='mt-8 mb-12'>
   <h1 class='font-bold text-4xl'>{{ plan.name }} <span class='text-xl text-eggplant-300'>Running Plan</span></h1>
@@ -22,8 +26,26 @@ permalink: plans/{{ plan.name | slug }}/index.html
 
 <section class='mt-20'>
   <h2 class='text-3xl font-bold mb-12'>Plan Features</h2>
-  <ul class='grid grid-cols-4 gap-8'>
-    <li>{{ plan.activitiesPerWeek }} runs per week</li>
+  <ul class='grid grid-cols-3 gap-8'>
+    <li class='bg-eggplant-700 rounded-lg p-4'>
+      <p class='uppercase text-sm text-clementine-300'>Runs per Week</p>
+      <div class='flex items-center my-1'>
+        <p class='mr-2 text-2xl'>{{ plan.activitiesPerWeek }}</p>
+        {% svg 'running', { class: 'fill-current h-5 w-5' } %}
+      </div>
+      <ul class='flex justify-between'>
+        {% for index in range(0, 7) %}
+          <li class='flex flex-col'>
+            <span class='text-center'>{{ daysOfWeek[index] }}</span>
+            {% if runningDays[plan.activitiesPerWeek][index] %}
+              <div class='mx-auto bg-clementine-500 h-3 w-3 rounded-full'></div>
+            {% else %}
+              <div class='mx-auto bg-eggplant-900 h-3 w-3 rounded-full'></div>
+            {% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+    </li>
     <li>{{ chunkedActivities | length }} to {{ (chunkedActivities | length) + 2 }} weeks</li>
     <li>Perfect for Beginners</li>
   </ul>

@@ -13,7 +13,7 @@ const svg = (icon, params = {}) => {
   const element = jsdom.window.document.querySelector("svg");
 
   if ("class" in params) {
-    element.classList.add(params.class.split(" "));
+    element.classList.add(...params.class.split(" "));
   }
 
   return jsdom.serialize();
