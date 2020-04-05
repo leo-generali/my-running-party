@@ -13,6 +13,12 @@ permalink: plans/{{ plan.name | slug }}/index.html
 {% set runningDays = 
   { '3': [true, false, true, false, false, true, false] }
 %}
+{% set planLength = 
+  { 
+    'regular': chunkedActivities | length,
+    'long': (chunkedActivities | length) + 2
+  }
+%}
 
 <section class='mt-8 mb-12'>
   <h1 class='font-bold text-4xl'>{{ plan.name }} <span class='text-xl text-eggplant-300'>Running Plan</span></h1>
@@ -46,9 +52,29 @@ permalink: plans/{{ plan.name | slug }}/index.html
         {% endfor %}
       </ul>
     </li>
-    <li class='bg-eggplant-700 rounded-lg p-4'>
-      <p class='uppercase text-sm text-clementine-300'>Length</p>
-      <p>{{ chunkedActivities | length }} to {{ (chunkedActivities | length) + 2 }} weeks</p>
+    <li class='bg-eggplant-700 rounded-lg p-4 flex flex-col'>
+      <p class='uppercase text-sm text-clementine-300'>Weeks To Complete</p>
+      <div class='flex items-center my-auto'>
+        <p class='mr-2 text-xl'>{{ planLength.regular }} to {{ planLength.long }} weeks</p>
+        {% svg 'calendar', { class: 'fill-current h-5 w-5' } %}
+      </div>
+      <ul class='flex justify-between'>
+        {% for index in range(0, 6) %}
+          {% set lowestWeek = index + planLength.regular - 2 %}
+          <li class='flex flex-col flex-1'>
+            <span class='block text-center mb-2'>{{ lowestWeek }}</span>
+            {% if planLength.regular - lowestWeek <= 0 and planLength.long - lowestWeek >= 0 %}
+              <div 
+                class='
+                  {% if planLength.regular === lowestWeek %}plan-length--first{% endif %}
+                  {% if planLength.long === lowestWeek %}plan-length--last{% endif %}
+                  relative plan-length bg-clementine-500 h-1 w-full'></div>
+            {% else %}
+              <div class='bg-eggplant-900 h-1 w-full'></div>
+            {% endif %}
+          </li>
+        {% endfor %}
+      </ul>
     </li>
     <li class='bg-eggplant-700 rounded-lg p-4'>
       <p class='uppercase text-sm text-clementine-300'>Perfect For</p>

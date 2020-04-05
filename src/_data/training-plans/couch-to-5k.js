@@ -14,6 +14,14 @@ const activities = [
   { time: 6, description: "Lorem Ipsum" },
   { time: 7, description: "Lorem Ipsum" },
   { time: 8, description: "Lorem Ipsum" },
+  { time: 8, description: "Lorem Ipsum" },
+  { time: 8, description: "Lorem Ipsum" },
+  { time: 8, description: "Lorem Ipsum" },
+  { time: 8, description: "Lorem Ipsum" },
+  { time: 8, description: "Lorem Ipsum" },
+  { time: 8, description: "Lorem Ipsum" },
+  { time: 8, description: "Lorem Ipsum" },
+  { time: 8, description: "Lorem Ipsum" },
 ];
 
 const weeklyNotes = [
@@ -31,7 +39,7 @@ const description = md.render(`
   
   We won't lie: our plan does span a little more time than some other beginner 5k plans, but we don't do that no reason. We want you to get across the finish line healthy. Take it from us, there's nothing less fun that spending time training for a race only to have to cancel it last minute.
 
-  Our plan should take about ${Math.round(planLength)} weeks to complete.
+  Our plan should take about ${Math.ceil(planLength)} weeks to complete.
 `);
 
 module.exports = {
