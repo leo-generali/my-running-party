@@ -3,6 +3,7 @@ const md = require("markdown-it")();
 // Details about the plan
 const name = "My First 5k";
 const activitiesPerWeek = 3;
+const perfectFor = "First Timers";
 
 const activities = [
   { time: 1, description: "Lorem Ipsum" },
@@ -39,4 +40,5 @@ module.exports = {
   activitiesPerWeek,
   activities,
   weeklyNotes,
+  perfectFor,
 };
