@@ -7,7 +7,7 @@ const entryFiles = fg.sync([
 ]);
 
 const config = {
-  outDir: "./dist/assets",
+  outDir: "./src/assets/dist",
   publicUrl: "/assets",
 };
 
