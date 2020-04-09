@@ -34,7 +34,7 @@ const weeklyNotes = [
 
 const planLength = activities.length / activitiesPerWeek;
 
-const description = md.render(`
+const longDescription = md.render(`
   Our ${name} program is designed for runners looking to complete their first ever 5k. We assume no prior experience and have taken the time to hand craft the perfect plan for those of us wanting to run our first 3.1 miles.
   
   We won't lie: our plan does span a little more time than some other beginner 5k plans, but we don't do that no reason. We want you to get across the finish line healthy. Take it from us, there's nothing less fun that spending time training for a race only to have to cancel it last minute.
@@ -42,9 +42,16 @@ const description = md.render(`
   Our plan should take about ${Math.ceil(planLength)} weeks to complete.
 `);
 
+const shortDescription = md.render(`
+  The perfect plan for beginners. Assumes no previous running experience.
+`);
+
 module.exports = {
   name,
-  description,
+  description: {
+    long: longDescription,
+    short: shortDescription,
+  },
   activitiesPerWeek,
   activities,
   weeklyNotes,

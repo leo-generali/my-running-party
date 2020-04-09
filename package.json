@@ -4,11 +4,13 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "clean": "rimraf dist/",
+    "clean": "yarn clean:dist && yarn clean:assets",
+    "clean:dist": "rimraf dist/",
+    "clean:assets": "rimraf src/assets/dist/",
     "dev:assets": "NODE_ENV=development node ./parcel.config.js",
     "dev:eleventy": "NODE_ENV=development eleventy --serve",
     "dev": "yarn clean && concurrently \"yarn dev:assets\" \"yarn dev:eleventy\"",
-    "build:assets": "NODE_ENV=production node ./parcel.config.js",
+    "build:assets": "yarn clean:assets && NODE_ENV=production node ./parcel.config.js",
     "build:eleventy": "NODE_ENV=production eleventy",
     "build": "yarn build:assets && yarn build:eleventy",
     "serve:dist": "yarn clean && yarn build && npx serve dist/"

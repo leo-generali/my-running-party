@@ -1,1 +1,3 @@
-console.log("hello world!!");
+const string = "hello world!";
+
+console.log(`${string}: hello hello`);

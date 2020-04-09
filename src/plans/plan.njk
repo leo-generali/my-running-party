@@ -26,13 +26,14 @@ permalink: plans/{{ plan.name | slug }}/index.html
 
 <section class='w-screen ml-1/2 transform -translate-x-1/2 bg-eggplant-700 py-12 shadow-inner'>
   <div class='plan-description max-w-screen-md px-4 mx-auto'>
-    {{ plan.description | safe }}
+    {{ plan.description.long | safe }}
   </div>
 </section>
 
 <section class='mt-20'>
   <h2 class='text-3xl font-bold mb-12'>Plan Features</h2>
   <ul class='grid gap-8' style='grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr) );'>
+    {# Runs per Week #}
     <li class='bg-eggplant-700 rounded-lg p-4'>
       <p class='uppercase text-sm text-clementine-300 flex'>
         {% svg 'running', { class: 'fill-current h-5 w-5 mr-2' } %}
@@ -54,6 +55,8 @@ permalink: plans/{{ plan.name | slug }}/index.html
         <span class='text-clementine-500'>{{ plan.activitiesPerWeek }}</span> times a week
       </p>
     </li>
+
+    {# Weeks to Complete #}
     <li class='bg-eggplant-700 rounded-lg p-4 flex flex-col'>
       <p class='uppercase text-sm text-clementine-300 flex'>
         {% svg 'calendar', { class: 'fill-current h-5 w-5 mr-2' } %}
@@ -80,6 +83,8 @@ permalink: plans/{{ plan.name | slug }}/index.html
         <span class='text-clementine-500'>{{ planLength.regular }} - {{ planLength.long }}</span> weeks to complete
       </p>
     </li>
+
+    {# Perfect For #}
     <li class='bg-eggplant-700 rounded-lg p-4'>
       <p class='uppercase text-sm text-clementine-300'>Perfect For</p>
       <p>{{ plan.perfectFor }}</p>
