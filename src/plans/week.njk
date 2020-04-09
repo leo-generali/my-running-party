@@ -7,6 +7,10 @@ layout: layouts/main.njk
 ---
 {% set currentPlanTraining = pagination.pages | filter(plan.name) %}
 
+<section class='mt-8 mb-12'>
+  <h1 class='font-bold text-4xl'>{{ plan.name }} <span class='text-xl text-eggplant-300'>Week {{ plan.week }}</span></h1>
+</section>
+
 {# Training Plan Week Link #}
 <nav>
   <ul class='grid grid-cols-8 gap-10'>
@@ -30,5 +34,6 @@ layout: layouts/main.njk
 
 {% for activity in plan.activities %}
   {{ activity.time }}
+  {{ activity.description | safe }}
 {% endfor %}
 

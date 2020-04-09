@@ -1,4 +1,5 @@
 const md = require("markdown-it")();
+const Activity = require("../../_models/Activity");
 
 // Details about the plan
 const name = "My First 5k";
@@ -6,22 +7,65 @@ const activitiesPerWeek = 3;
 const perfectFor = "First Timers";
 
 const activities = [
-  { time: 1, description: "Lorem Ipsum" },
-  { time: 2, description: "Lorem Ipsum" },
-  { time: 3, description: "Lorem Ipsum" },
-  { time: 4, description: "Lorem Ipsum" },
-  { time: 5, description: "Lorem Ipsum" },
-  { time: 6, description: "Lorem Ipsum" },
-  { time: 7, description: "Lorem Ipsum" },
-  { time: 8, description: "Lorem Ipsum" },
-  { time: 8, description: "Lorem Ipsum" },
-  { time: 8, description: "Lorem Ipsum" },
-  { time: 8, description: "Lorem Ipsum" },
-  { time: 8, description: "Lorem Ipsum" },
-  { time: 8, description: "Lorem Ipsum" },
-  { time: 8, description: "Lorem Ipsum" },
-  { time: 8, description: "Lorem Ipsum" },
-  { time: 8, description: "Lorem Ipsum" },
+  // Week One
+  new Activity({
+    workout: `6 x (run 1 minutes + walk 4 minutes)`,
+    time: 40,
+    warmupTime: 5,
+    cooldownTime: 5,
+  }),
+  new Activity({
+    workout: `6 x (run 1 minutes + walk 4 minutes)`,
+    time: 40,
+    warmupTime: 5,
+    cooldownTime: 5,
+  }),
+  new Activity({
+    workout: `6 x (run 1 minutes + walk 4 minutes)`,
+    time: 40,
+    warmupTime: 5,
+    cooldownTime: 5,
+  }),
+
+  // Week Two
+  new Activity({
+    workout: `6 x (run 2 minutes + walk 3 minutes)`,
+    time: 40,
+    warmupTime: 5,
+    cooldownTime: 5,
+  }),
+  new Activity({
+    workout: `6 x (run 2 minutes + walk 3 minutes)`,
+    time: 40,
+    warmupTime: 5,
+    cooldownTime: 5,
+  }),
+  new Activity({
+    workout: `6 x (run 2 minutes + walk 3 minutes)`,
+    time: 40,
+    warmupTime: 5,
+    cooldownTime: 5,
+  }),
+
+  // Week Three
+  new Activity({
+    workout: `6 x (run 4 minutes + walk 1 minutes)`,
+    time: 40,
+    warmupTime: 5,
+    cooldownTime: 5,
+  }),
+  new Activity({
+    workout: `6 x (run 4 minutes + walk 1 minutes)`,
+    time: 40,
+    warmupTime: 5,
+    cooldownTime: 5,
+  }),
+  new Activity({
+    workout: `6 x (run 4 minutes + walk 1 minutes)`,
+    time: 40,
+    warmupTime: 5,
+    cooldownTime: 5,
+  }),
 ];
 
 const weeklyNotes = [
@@ -53,7 +97,7 @@ module.exports = {
     short: shortDescription,
   },
   activitiesPerWeek,
-  activities,
+  activities: activities.map((activity) => activity.createObject()),
   weeklyNotes,
   perfectFor,
 };

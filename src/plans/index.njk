@@ -6,7 +6,7 @@ layout: layouts/main.njk
   <h1 class='font-bold text-4xl'>Running Training Plans</h1>
 </section>
 
-<section class='grid grid-cols-2 gap-4'>
+<section class='grid gap-4' style='grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr) );'>
 {% for plan in plans %}
   {% set name = plan.name %}
   {% set slug = '/plans/' + name | slug %}
@@ -30,4 +30,15 @@ layout: layouts/main.njk
       <p class='mt-4 text-right text-white'>&#8594 see plan</p>
     </a>
   {% endfor %}
+  <div
+    class='
+      border-dashed border-2 border-lime-500
+      p-4 rounded-lg block'>
+    <p class='font-semibold tracking-widest uppercase'>
+      My First 10k
+    </p>
+    <p class='mt-4'>
+      We're currently developing our "My First 10k Plan". The perfect for athletes that want to run their first 10k. Will not assume any previous running experience.
+    </p>
+  </div>
 </section>
