@@ -16,7 +16,7 @@ module.exports = (config) => {
   config.addShortcode("svg", shortcodes.svg);
 
   // Minify HTML if on production
-  if (process.env.ENV !== "development") {
+  if (process.env.NODE_ENV === "production") {
     config.addTransform("minify-html", transforms.minify);
   }
 

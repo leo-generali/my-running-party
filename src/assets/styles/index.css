@@ -1,7 +1,7 @@
 @font-face {
   font-family: Lexend Deca;
-  src: url('/fonts/lexend-deca-latin-400.woff2') format('woff2'),
-       url('/fonts/lexend-deca-latin-400.woff') format('woff');
+  src: url('../fonts/lexend-deca-latin-400.woff2') format('woff2'),
+       url('../fonts/lexend-deca-latin-400.woff') format('woff');
 }
 
 @tailwind base;
@@ -10,6 +10,10 @@
 :root {
   /* Nav Variables */
   --nav-bar-height: -0.5rem;
+}
+
+.color {
+  color: blue;
 }
 
 .text-shadow {
