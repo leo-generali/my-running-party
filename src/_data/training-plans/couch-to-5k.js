@@ -1,5 +1,5 @@
 const md = require("markdown-it")();
-const Activity = require("../../_models/Activity");
+const Activity = require("../../_models/activity");
 
 // Details about the plan
 const name = "My First 5k";

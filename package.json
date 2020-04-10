@@ -7,13 +7,15 @@
     "clean": "yarn clean:dist && yarn clean:assets",
     "clean:dist": "rimraf dist/",
     "clean:assets": "rimraf src/assets/dist/",
+    "dev": "yarn clean:dist && concurrently \"yarn dev:assets\" \"yarn dev:eleventy\"",
     "dev:assets": "NODE_ENV=development node ./parcel.config.js",
     "dev:eleventy": "NODE_ENV=development eleventy --serve",
-    "dev": "yarn clean:dist && concurrently \"yarn dev:assets\" \"yarn dev:eleventy\"",
     "build:assets": "yarn clean:assets && NODE_ENV=production node ./parcel.config.js",
     "build:eleventy": "NODE_ENV=production eleventy",
     "build": "yarn build:assets && yarn build:eleventy",
-    "serve:dist": "yarn clean && yarn build && npx serve dist/"
+    "serve:dist": "yarn clean && yarn build && npx serve dist/",
+    "test": "jest",
+    "test:watch": "jest --watch"
   },
   "devDependencies": {
     "@11ty/eleventy": "@git@github.com:11ty/eleventy",
@@ -23,6 +25,7 @@
     "cssnano": "^4.1.10",
     "fast-glob": "^3.2.2",
     "html-minifier": "^4.0.0",
+    "jest": "^25.3.0",
     "jsdom": "^16.2.2",
     "lodash": "^4.17.15",
     "markdown-it": "^10.0.0",

@@ -18,9 +18,6 @@ module.exports = class Activity {
   }
 
   _renderDescription() {
-    return `
-    <p>${this._warmupTime} minutes ${this._warmupSpeed} warmup</p>
-    <p>${this._workout}</p>
-    <p>${this._cooldownTime} minutes ${this._cooldownSpeed} cooldown</p>`;
+    return `<p>${this._warmupTime} minutes ${this._warmupSpeed} warmup</p><p>${this._workout}</p><p>${this._cooldownTime} minutes ${this._cooldownSpeed} cooldown</p>`;
   }
 };
