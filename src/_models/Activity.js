@@ -12,7 +12,7 @@ module.exports = class Activity {
 
   createObject() {
     return {
-      time: this._time,
+      time: this._time + this._warmupTime + this._cooldownTime,
       description: this._renderDescription(),
     };
   }

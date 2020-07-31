@@ -6,66 +6,275 @@ const name = "My First 5k";
 const activitiesPerWeek = 3;
 const perfectFor = "First Timers";
 
+// Done
+const weekOne = [
+  new Activity({
+    workout: `6 x (jog 1 minute / walk 2 minutes)`,
+    time: 18,
+    warmupTime: 5,
+    cooldownTime: 5,
+  }),
+  new Activity({
+    workout: `6 x (jog 1.5 minutes / walk 2 minutes)`,
+    time: 21,
+    warmupTime: 5,
+    cooldownTime: 5,
+  }),
+  new Activity({
+    workout: `6 x (jog 1.5 minutes / walk 2 minutes)`,
+    time: 21,
+    warmupTime: 5,
+    cooldownTime: 5,
+  }),
+];
+
+// Done
+const weekTwo = [
+  new Activity({
+    workout: `6 x (jog 2 minute / walk 2 minutes)`,
+    time: 24,
+    warmupTime: 5,
+    cooldownTime: 5,
+  }),
+  new Activity({
+    workout: `6 x (jog 1 minute / walk 2 minutes)`,
+    time: 18,
+    warmupTime: 5,
+    cooldownTime: 5,
+  }),
+  new Activity({
+    workout: `6 x (jog 2 minute / walk 2 minutes)`,
+    time: 24,
+    warmupTime: 5,
+    cooldownTime: 5,
+  }),
+];
+
+// Done
+const weekThree = [
+  new Activity({
+    workout: `6 x (jog 2 minute / walk 1 minutes)`,
+    time: 18,
+    warmupTime: 5,
+    cooldownTime: 5,
+  }),
+  new Activity({
+    workout: `6 x (jog 2 minute / walk 1 minutes)`,
+    time: 18,
+    warmupTime: 5,
+    cooldownTime: 5,
+  }),
+  new Activity({
+    workout: `6 x (jog 3 minutes / walk 1 minutes)`,
+    time: 24,
+    warmupTime: 5,
+    cooldownTime: 5,
+  }),
+];
+
+const weekFour = [
+  // Down Day
+  new Activity({
+    workout: `6 x (jog 1 minutes / walk 3 minutes)`,
+    time: 24,
+    warmupTime: 5,
+    cooldownTime: 5,
+  }),
+  new Activity({
+    workout: `5 minute jog, 5 minute walk, 5 minute jog`,
+    time: 15,
+    warmupTime: 5,
+    cooldownTime: 5,
+  }),
+  new Activity({
+    workout: `5 minute jog, 5 minute walk, 5 minute jog`,
+    time: 21,
+    warmupTime: 5,
+    cooldownTime: 5,
+  }),
+];
+
+const weekFive = [
+  new Activity({
+    workout: `6 x (jog 1 minute / walk 2 minutes)`,
+    time: 18,
+    warmupTime: 5,
+    cooldownTime: 5,
+  }),
+  new Activity({
+    workout: `6 x (jog 1.5 minutes / walk 2 minutes)`,
+    time: 21,
+    warmupTime: 5,
+    cooldownTime: 5,
+  }),
+  new Activity({
+    workout: `6 x (jog 1.5 minutes / walk 2 minutes)`,
+    time: 21,
+    warmupTime: 5,
+    cooldownTime: 5,
+  }),
+];
+
+const weekSix = [
+  new Activity({
+    workout: `6 x (jog 1 minute / walk 2 minutes)`,
+    time: 18,
+    warmupTime: 5,
+    cooldownTime: 5,
+  }),
+  new Activity({
+    workout: `6 x (jog 1.5 minutes / walk 2 minutes)`,
+    time: 21,
+    warmupTime: 5,
+    cooldownTime: 5,
+  }),
+  new Activity({
+    workout: `6 x (jog 1.5 minutes / walk 2 minutes)`,
+    time: 21,
+    warmupTime: 5,
+    cooldownTime: 5,
+  }),
+];
+
+const weekSeven = [
+  new Activity({
+    workout: `6 x (jog 1 minute / walk 2 minutes)`,
+    time: 18,
+    warmupTime: 5,
+    cooldownTime: 5,
+  }),
+  new Activity({
+    workout: `6 x (jog 1.5 minutes / walk 2 minutes)`,
+    time: 21,
+    warmupTime: 5,
+    cooldownTime: 5,
+  }),
+  new Activity({
+    workout: `6 x (jog 1.5 minutes / walk 2 minutes)`,
+    time: 21,
+    warmupTime: 5,
+    cooldownTime: 5,
+  }),
+];
+
+const weekEight = [
+  new Activity({
+    workout: `6 x (jog 1 minute / walk 2 minutes)`,
+    time: 18,
+    warmupTime: 5,
+    cooldownTime: 5,
+  }),
+  new Activity({
+    workout: `6 x (jog 1.5 minutes / walk 2 minutes)`,
+    time: 21,
+    warmupTime: 5,
+    cooldownTime: 5,
+  }),
+  new Activity({
+    workout: `6 x (jog 1.5 minutes / walk 2 minutes)`,
+    time: 21,
+    warmupTime: 5,
+    cooldownTime: 5,
+  }),
+];
+
+const weekNine = [
+  new Activity({
+    workout: `6 x (jog 1 minute / walk 2 minutes)`,
+    time: 18,
+    warmupTime: 5,
+    cooldownTime: 5,
+  }),
+  new Activity({
+    workout: `6 x (jog 1.5 minutes / walk 2 minutes)`,
+    time: 21,
+    warmupTime: 5,
+    cooldownTime: 5,
+  }),
+  new Activity({
+    workout: `6 x (jog 1.5 minutes / walk 2 minutes)`,
+    time: 21,
+    warmupTime: 5,
+    cooldownTime: 5,
+  }),
+];
+
+const weekTen = [
+  new Activity({
+    workout: `6 x (jog 1 minute / walk 2 minutes)`,
+    time: 18,
+    warmupTime: 5,
+    cooldownTime: 5,
+  }),
+  new Activity({
+    workout: `6 x (jog 1.5 minutes / walk 2 minutes)`,
+    time: 21,
+    warmupTime: 5,
+    cooldownTime: 5,
+  }),
+  new Activity({
+    workout: `6 x (jog 1.5 minutes / walk 2 minutes)`,
+    time: 21,
+    warmupTime: 5,
+    cooldownTime: 5,
+  }),
+];
+
+const weekEleven = [
+  new Activity({
+    workout: `6 x (jog 1 minute / walk 2 minutes)`,
+    time: 18,
+    warmupTime: 5,
+    cooldownTime: 5,
+  }),
+  new Activity({
+    workout: `6 x (jog 1.5 minutes / walk 2 minutes)`,
+    time: 21,
+    warmupTime: 5,
+    cooldownTime: 5,
+  }),
+  new Activity({
+    workout: `6 x (jog 1.5 minutes / walk 2 minutes)`,
+    time: 21,
+    warmupTime: 5,
+    cooldownTime: 5,
+  }),
+];
+
+const weekTwelve = [
+  new Activity({
+    workout: `6 x (jog 1 minute / walk 2 minutes)`,
+    time: 18,
+    warmupTime: 5,
+    cooldownTime: 5,
+  }),
+  new Activity({
+    workout: `6 x (jog 1.5 minutes / walk 2 minutes)`,
+    time: 21,
+    warmupTime: 5,
+    cooldownTime: 5,
+  }),
+  new Activity({
+    workout: `6 x (jog 1.5 minutes / walk 2 minutes)`,
+    time: 21,
+    warmupTime: 5,
+    cooldownTime: 5,
+  }),
+];
+
 const activities = [
-  // Week One
-  new Activity({
-    workout: `6 x (run 1 minutes + walk 4 minutes)`,
-    time: 40,
-    warmupTime: 5,
-    cooldownTime: 5,
-  }),
-  new Activity({
-    workout: `6 x (run 1 minutes + walk 4 minutes)`,
-    time: 40,
-    warmupTime: 5,
-    cooldownTime: 5,
-  }),
-  new Activity({
-    workout: `6 x (run 1 minutes + walk 4 minutes)`,
-    time: 40,
-    warmupTime: 5,
-    cooldownTime: 5,
-  }),
-
-  // Week Two
-  new Activity({
-    workout: `6 x (run 2 minutes + walk 3 minutes)`,
-    time: 40,
-    warmupTime: 5,
-    cooldownTime: 5,
-  }),
-  new Activity({
-    workout: `6 x (run 2 minutes + walk 3 minutes)`,
-    time: 40,
-    warmupTime: 5,
-    cooldownTime: 5,
-  }),
-  new Activity({
-    workout: `6 x (run 2 minutes + walk 3 minutes)`,
-    time: 40,
-    warmupTime: 5,
-    cooldownTime: 5,
-  }),
-
-  // Week Three
-  new Activity({
-    workout: `6 x (run 4 minutes + walk 1 minutes)`,
-    time: 40,
-    warmupTime: 5,
-    cooldownTime: 5,
-  }),
-  new Activity({
-    workout: `6 x (run 4 minutes + walk 1 minutes)`,
-    time: 40,
-    warmupTime: 5,
-    cooldownTime: 5,
-  }),
-  new Activity({
-    workout: `6 x (run 4 minutes + walk 1 minutes)`,
-    time: 40,
-    warmupTime: 5,
-    cooldownTime: 5,
-  }),
+  ...weekOne,
+  ...weekTwo,
+  ...weekThree,
+  ...weekFour,
+  ...weekFive,
+  ...weekSix,
+  ...weekSeven,
+  ...weekEight,
+  ...weekNine,
+  ...weekTen,
+  ...weekEleven,
+  ...weekTwelve,
 ];
 
 const weeklyNotes = [
