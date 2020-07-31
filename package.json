@@ -18,22 +18,25 @@
     "test:watch": "jest --watch"
   },
   "devDependencies": {
-    "@11ty/eleventy": "@git@github.com:11ty/eleventy",
-    "@fullhuman/postcss-purgecss": "^2.1.0",
-    "autoprefixer": "^9.7.5",
-    "concurrently": "^5.1.0",
+    "@11ty/eleventy": "^0.11.0",
+    "@fullhuman/postcss-purgecss": "^2.3.0",
+    "autoprefixer": "^9.8.6",
+    "concurrently": "^5.2.0",
     "cssnano": "^4.1.10",
-    "fast-glob": "^3.2.2",
+    "fast-glob": "^3.2.4",
     "html-minifier": "^4.0.0",
-    "jest": "^25.3.0",
-    "jsdom": "^16.2.2",
-    "lodash": "^4.17.15",
-    "markdown-it": "^10.0.0",
+    "jest": "^26.2.2",
+    "jsdom": "^16.3.0",
+    "lodash": "^4.17.19",
+    "markdown-it": "^11.0.0",
     "parcel-bundler": "^1.12.4",
-    "postcss": "^7.0.27",
-    "postcss-nested": "^4.2.1",
+    "postcss": "^7.0.32",
+    "postcss-nested": "^4.2.3",
     "rimraf": "^3.0.2",
-    "slugify": "^1.4.0",
-    "tailwindcss": "^1.2.0"
+    "slugify": "^1.4.5",
+    "tailwindcss": "^1.6.0"
+  },
+  "dependencies": {
+    "preact": "^10.4.6"
   }
 }
