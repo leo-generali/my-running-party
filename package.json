@@ -8,6 +8,7 @@
     "clean:dist": "rimraf dist/",
     "clean:assets": "rimraf src/assets/dist/",
     "dev": "yarn clean:dist && concurrently \"yarn dev:assets\" \"yarn dev:eleventy\"",
+    "dev:preact": "yarn clean:dist && eleventy && yarn dev:assets",
     "dev:assets": "NODE_ENV=development node ./parcel.config.js",
     "dev:eleventy": "NODE_ENV=development eleventy --serve",
     "build:assets": "yarn clean:assets && NODE_ENV=production node ./parcel.config.js",
