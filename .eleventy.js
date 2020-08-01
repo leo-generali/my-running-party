@@ -23,7 +23,6 @@ module.exports = (config) => {
   // Passthrough stuff
   config.addPassthroughCopy({ "src/_favicon/*": "/" });
   config.addPassthroughCopy({ "src/_fonts/*": "/fonts" });
-  config.addPassthroughCopy({ "src/assets/dist": "/assets" });
 
   return {
     dir: {
