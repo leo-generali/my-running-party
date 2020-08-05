@@ -3,13 +3,12 @@ import { useEffect } from "preact/hooks";
 import {
   usePaceCalculatorState,
   usePaceCalculatorDispatch,
-  updateMaskedTime,
 } from "../pace-calculator/store";
 
 const Input = ({ id, name, value, onInput }) => {
   return (
     <Fragment>
-      <label className="sr-only" htmlFor="id">
+      <label className="sr-only" htmlFor={id}>
         {name}
       </label>
       <input
@@ -31,11 +30,11 @@ const TimeInput = () => {
 
   useEffect(() => {
     const time =
-      Number(state.input.hours) * 3600 +
-      Number(state.input.minutes) * 60 +
-      Number(state.input.seconds);
+      Number(state.inputHours) * 3600 +
+      Number(state.inputMinutes) * 60 +
+      Number(state.inputSeconds);
     dispatch({ type: "state/UPDATE_STATE", payload: time, stateType: "time" });
-  }, [state.input.hours, state.input.minutes, state.input.seconds]);
+  }, [state.inputHours, state.inputMinutes, state.inputSeconds]);
 
   return (
     <fieldset>
@@ -43,36 +42,36 @@ const TimeInput = () => {
       <Input
         id="hours"
         name="hours"
-        value={state.input.hours}
+        value={state.inputHours}
         onInput={(evt) => {
           dispatch({
             type: "input/UPDATE_TIME",
             payload: evt.target.value,
-            inputType: evt.target.name,
+            inputType: "inputHours",
           });
         }}
       />
       <Input
         id="minutes"
         name="minutes"
-        value={state.input.minutes}
+        value={state.inputMinutes}
         onInput={(evt) => {
           dispatch({
             type: "input/UPDATE_TIME",
             payload: evt.target.value,
-            inputType: evt.target.name,
+            inputType: "inputMinutes",
           });
         }}
       />
       <Input
         id="seconds"
         name="seconds"
-        value={state.input.seconds}
+        value={state.inputSeconds}
         onInput={(evt) => {
           dispatch({
             type: "input/UPDATE_TIME",
             payload: evt.target.value,
-            inputType: evt.target.name,
+            inputType: "inputSeconds",
           });
         }}
       />

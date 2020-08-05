@@ -1,16 +1,17 @@
-import { h, Fragment } from "preact";
+import { h } from "preact";
 import TimeInput from "../components/TimeInput";
 import DistanceInput from "../components/DistanceInput";
-import { usePaceCalculatorState } from "../pace-calculator/store";
+import PaceResult from "../components/PaceResult";
 
 const App = () => {
-  const state = usePaceCalculatorState();
   return (
-    <form>
-      <TimeInput />
-      <DistanceInput />
-      {console.log(state)}
-    </form>
+    <div>
+      <form>
+        <TimeInput />
+        {/* <DistanceInput /> */}
+      </form>
+      <PaceResult />
+    </div>
   );
 };
 

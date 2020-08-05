@@ -1,23 +1,22 @@
 import { h, createContext } from "preact";
 import { useReducer, useContext } from "preact/hooks";
+import { secondsToDisplay } from "../utils/time";
 
 export const PaceCalculatorStateContext = createContext();
 export const PaceCalculatorDispatchContext = createContext();
 
 const initialState = {
   // Raw Values
-  time: 0,
-  distance: 0,
-  pace: 0,
+  time: 0, // in seconds
+  distance: 1609, // in meters
+  pace: 0, // meters/second
   unit: "mi",
 
   // Input Values
-  input: {
-    hours: "00",
-    minutes: "00",
-    seconds: "00",
-    distance: "1",
-  },
+  inputHours: "00",
+  inputMinutes: "00",
+  inputSeconds: "00",
+  inputDistance: "1609",
 };
 
 const reducer = (state, action) => {
@@ -28,7 +27,7 @@ const reducer = (state, action) => {
       if (userCanModifyInput(action.payload)) {
         return {
           ...state,
-          input: { ...state.input, [action.inputType]: action.payload },
+          [action.inputType]: action.payload,
         };
       }
     }
@@ -46,8 +45,8 @@ const reducer = (state, action) => {
       return { ...state, [action.stateType]: action.payload };
     }
 
-    case "decrement": {
-      return { count: state.count - 1 };
+    case "state/CALCULATE_PACE": {
+      return { ...state, pace: state.time / state.distance };
     }
 
     default: {
