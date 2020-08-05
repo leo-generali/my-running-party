@@ -31,10 +31,11 @@ const TimeInput = () => {
 
   useEffect(() => {
     const time =
-      Number(state.hours) * 3600 +
-      Number(state.minutes) * 60 +
-      Number(state.seconds);
-  }, [state.hours, state.minutes, state.seconds]);
+      Number(state.input.hours) * 3600 +
+      Number(state.input.minutes) * 60 +
+      Number(state.input.seconds);
+    dispatch({ type: "state/UPDATE_STATE", payload: time, stateType: "time" });
+  }, [state.input.hours, state.input.minutes, state.input.seconds]);
 
   return (
     <fieldset>
@@ -42,10 +43,10 @@ const TimeInput = () => {
       <Input
         id="hours"
         name="hours"
-        value={state.hours}
+        value={state.input.hours}
         onInput={(evt) => {
           dispatch({
-            type: "input/INPUT_TIME",
+            type: "input/UPDATE_TIME",
             payload: evt.target.value,
             inputType: evt.target.name,
           });
@@ -54,10 +55,10 @@ const TimeInput = () => {
       <Input
         id="minutes"
         name="minutes"
-        value={state.minutes}
+        value={state.input.minutes}
         onInput={(evt) => {
           dispatch({
-            type: "input/INPUT_TIME",
+            type: "input/UPDATE_TIME",
             payload: evt.target.value,
             inputType: evt.target.name,
           });
@@ -66,10 +67,10 @@ const TimeInput = () => {
       <Input
         id="seconds"
         name="seconds"
-        value={state.seconds}
+        value={state.input.seconds}
         onInput={(evt) => {
           dispatch({
-            type: "input/INPUT_TIME",
+            type: "input/UPDATE_TIME",
             payload: evt.target.value,
             inputType: evt.target.name,
           });
