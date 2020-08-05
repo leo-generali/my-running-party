@@ -36,7 +36,8 @@ const reducer = (state, action) => {
       if (userCanModifyInput(action.payload)) {
         return {
           ...state,
-          input: { ...state.input, distance: action.payload },
+          inputDistance: action.payload,
+          distance: action.payload,
         };
       }
     }

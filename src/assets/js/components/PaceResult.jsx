@@ -13,7 +13,7 @@ const PaceResult = () => {
 
   useEffect(() => {
     dispatch({ type: "state/CALCULATE_PACE" });
-  }, [state.time]);
+  }, [state.time, state.distance]);
 
   return <Time>{convertSecondsPerMeter(state.pace)}</Time>;
 };

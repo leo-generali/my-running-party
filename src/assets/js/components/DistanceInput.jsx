@@ -29,13 +29,13 @@ const DistanceInput = () => {
   const dispatch = usePaceCalculatorDispatch();
 
   useEffect(() => {
-    const distance = state.input.distance;
+    const distance = state.inputDistance;
     dispatch({
       type: "state/UPDATE_STATE",
       payload: distance,
       stateType: "distance",
     });
-  }, [state.input.distance]);
+  }, [state.inputDistance]);
 
   return (
     <fieldset>
@@ -43,7 +43,7 @@ const DistanceInput = () => {
       <Input
         id="distance"
         name="distance"
-        value={state.input.distance}
+        value={state.inputDistance}
         onInput={(evt) => {
           dispatch({
             type: "input/UPDATE_DISTANCE",

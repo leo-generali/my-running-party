@@ -8,7 +8,7 @@ const App = () => {
     <div>
       <form>
         <TimeInput />
-        {/* <DistanceInput /> */}
+        <DistanceInput />
       </form>
       <PaceResult />
     </div>
